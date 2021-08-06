@@ -23,6 +23,10 @@ await axios.post('http://localhost:4005/events', {
   content: content,
   postId: req.params.id,
 });
+app.post('/events', (req, res) => {
+  console.log('Event Recieved', req.body.type);
+  res.send({});
+});
 res.status(201).send(comments);
 });
 app.listen(4001, () => console.log('Listening to port 4001'));
